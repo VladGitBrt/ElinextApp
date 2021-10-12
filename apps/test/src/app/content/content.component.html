@@ -1,0 +1,14 @@
+<div class="content-container">
+  <mat-card style="width: 300px">
+    <mat-card-title>Welcome {{ user[0].name }}</mat-card-title>
+    <mat-card-content
+      >Your password is: {{ user[0].password }}</mat-card-content
+    >
+  </mat-card>
+  <mat-list>
+    <div class="listItem" *ngFor="let i of Users">
+      <mat-list-item>ID:{{ i.id }} | {{ i.name }}</mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+</div>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@elinext/api-interfaces';
+import { User } from '@elinext/api-interfaces';
 
 @Component({
   selector: 'elinext-root',
@@ -8,6 +7,15 @@ import { Message } from '@elinext/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  logStatus = false;
+  currentUser: User[] = [];
+  Users: User[] = [];
+  loading = false;
+  constructor() {}
+  logStat(bool: boolean): void {
+    this.logStatus = bool;
+  }
+  registratedUser(user: User[]) {
+    this.currentUser = user;
+  }
 }

@@ -1,9 +1,12 @@
-<div style="text-align: center">
-  <h1>Welcome to test!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-    alt="Nx - Smart, Extensible Build Framework"
-  />
-</div>
-<div>Message: {{ hello$ | async | json }}</div>
+<ng-template #notLoading>
+  <elinext-login
+    (isLogged)="logStat($event)"
+    (userFound)="registratedUser($event)"
+    *ngIf="logStatus === false; else elseBlock"
+  ></elinext-login>
+  <ng-template #elseBlock>
+    <elinext-header></elinext-header>
+    <elinext-content [user]="currentUser" [Users]="Users"></elinext-content>
+    <elinext-footer></elinext-footer> </ng-template
+></ng-template>
+<elinext-spinner *ngIf="loading === true; else notLoading"></elinext-spinner>
