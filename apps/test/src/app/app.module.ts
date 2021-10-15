@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { MatCard, MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
@@ -19,6 +19,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UserpageComponent } from './userpage/userpage.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FooterComponent,
     LoginComponent,
     SpinnerComponent,
+    UserpageComponent,
+    NotfoundComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,12 +48,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
-      { path: 'main', component: ContentComponent },
+      { path: 'user/:id', component: UserpageComponent },
+      { path: '**', component: NotfoundComponent },
     ]),
-    MatCardModule,
+
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,12 +8,14 @@ import { User } from '@elinext/api-interfaces';
   styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit {
-  @Input() user: User[] = [];
   @Input() Users: User[] = [];
+  @Input() user: User[] = [];
+  logUser: User[] = [];
   constructor(private dataService: DataServiceService) {}
   ngOnInit(): void {
     this.dataService.getUsers().subscribe((data) => {
       this.Users = data;
     });
+    this.logUser = this.user;
   }
 }

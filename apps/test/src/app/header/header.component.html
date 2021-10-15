@@ -1,6 +1,14 @@
 <p>
-  <mat-toolbar color="primary" style="position: absolute; top: 0px">
+  <mat-toolbar
+    color="primary"
+    style="
+      position: absolute;
+      top: 0px;
+      display: flex;
+      justify-content: space-between;
+    "
+  >
     <span>Elinext test app</span>
-    <span class="example-spacer"></span>
+    <span>Welcome {{ user[0].name }}</span>
   </mat-toolbar>
 </p>

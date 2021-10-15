@@ -1,17 +1,17 @@
 <div class="login-container">
   <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
+    <mat-label>Email or Nickname</mat-label>
     <input matInput id="name" [formControl]="name" />
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Password</mat-label>
     <input matInput id="password" [formControl]="password" />
   </mat-form-field>
+
   <button
     mat-button
     color="primary"
     (click)="isLoggedIn()"
-    routerLink="/main"
     style="border: 1px solid lightblue"
   >
     Login
