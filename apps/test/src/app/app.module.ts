@@ -22,6 +22,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserpageComponent } from './userpage/userpage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { TestComponent } from './test/test.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TestComponent } from './test/test.component';
     UserpageComponent,
     NotfoundComponent,
     TestComponent,
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,8 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 50px;
   align-items: center;
   background-color: royalblue;
 }
@@ -22,4 +23,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10px;
+}
+.list-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

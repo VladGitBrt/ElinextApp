@@ -11,11 +11,25 @@ export class ContentComponent implements OnInit {
   @Input() Users: User[] = [];
   @Input() user: User[] = [];
   logUser: User[] = [];
+  addBtn = false;
   constructor(private dataService: DataServiceService) {}
   ngOnInit(): void {
     this.dataService.getUsers().subscribe((data) => {
       this.Users = data;
     });
     this.logUser = this.user;
+  }
+  addUserBtn() {
+    this.addBtn = !this.addBtn;
+    console.log(this.addBtn);
+  }
+  updateUsers(users: User[]) {
+    this.Users = users;
+  }
+  deleteUser(id: number) {
+    this.dataService.deleteUser(id);
+  }
+  closeWindow(event: boolean) {
+    this.addBtn = event;
   }
 }

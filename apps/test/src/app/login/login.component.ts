@@ -15,8 +15,8 @@ export class LoginComponent {
   Users: User[] = [];
   name = new FormControl('');
   password = new FormControl('');
-  async isLoggedIn() {
-    const USER = await this.authService.loginRequest(
+  isLoggedIn() {
+    const USER = this.authService.loginRequest(
       this.name.value,
       this.password.value
     );

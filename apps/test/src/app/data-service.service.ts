@@ -11,4 +11,10 @@ export class DataServiceService {
   getUsers() {
     return this.http.get<User[]>('/api/users');
   }
+  addUser(userBody: any) {
+    return this.http.post<User>('/api/adduser', userBody);
+  }
+  deleteUser(id: number) {
+    return this.http.get<User>(`/api/deleteuser/${id}`);
+  }
 }

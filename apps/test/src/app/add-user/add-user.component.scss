@@ -1,0 +1,43 @@
+.add-user-container {
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: lightyellow;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.form-group {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 20px;
+  gap: 10px;
+}
+input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 30px;
+}
+.ng-invalid {
+  border-left: 5px solid red;
+}
+.ng-valid {
+  border-left: 5px solid green;
+}
+.close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}

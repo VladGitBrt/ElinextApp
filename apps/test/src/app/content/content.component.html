@@ -2,12 +2,24 @@
 <div class="container">
   <div class="list">
     <div class="list-item" *ngFor="let user of Users">
-      [ID:{{ user.id }}] Name: {{ user.name
-      }}<button mat-button [routerLink]="['/user', user.id]">INFO</button>
+      [ID:{{ user.id }}] Name: {{ user.name }}
+      <div class="list-item-buttons">
+        <button mat-button [routerLink]="['/user', user.id]">INFO</button>
+
+        <button mat-button (click)="deleteUser(user.id)">Delete</button>
+      </div>
     </div>
+    <button mat-button *ngIf="user[0].isAdmin === true" (click)="addUserBtn()">
+      Add User
+    </button>
   </div>
 
   <div class="generate">
+    <elinext-add-user
+      *ngIf="addBtn === true"
+      (updateUsers)="updateUsers($event)"
+      (closeWindow)="closeWindow($event)"
+    ></elinext-add-user>
     <router-outlet></router-outlet>
   </div>
 </div>

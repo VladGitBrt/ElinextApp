@@ -1,0 +1,16 @@
+<div class="add-user-container">
+  <p>Add new User</p>
+  <fieldset [formGroup]="userInfoGroup" class="form-group">
+    <label>Login: <input type="text" required formControlName="name" /></label>
+    <label
+      >Password: <input type="text" required formControlName="password"
+    /></label>
+    <label>Age: <input type="text" required formControlName="age" /></label>
+    <label>
+      Information: <input type="text" required formControlName="info" />
+    </label>
+    <label>Hobby: <input type="text" required formControlName="hobby" /></label>
+  </fieldset>
+  <button mat-button (click)="addUser()">Add user</button>
+  <button mat-button (click)="closeWind()" class="close">X</button>
+</div>

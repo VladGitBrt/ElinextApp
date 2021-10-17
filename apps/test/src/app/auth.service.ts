@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataServiceService } from './data-service.service';
 import { User } from '@elinext/api-interfaces';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
